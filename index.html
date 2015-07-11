@@ -27,18 +27,29 @@
 .bs-example{
 	margin: 20px;
 }
+.row.no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+  padding-right: 0;
+  padding-left: 0;
+}
+
 </style>
 
 </head>
 <body>
+<!--
+<div class="navbar navbar-static-top">
 
-<div class="container-fixed">
-<div class="wrapper container ">
-	<div class="row" style ='background-color: #F47721;'>
+	<div class="row no-gutter " style ='background-color: #F47721;'>
 		<div class="col-lg-1">
- 		<img class="img-responsive" src="hhf.png" alt="Chania" style="width:150px;height:50px">
+ 		<img class="img-responsive" src="hhf.png" alt="Chania" style="width:250px;height:50px">
 		</div>
-		<div class="col-lg-9">
+		<div class="col-lg-9 nopadding">
 		<h1>Happy Hearts</h1>
 		</div>
 		<div class="col-lg-2">
@@ -58,10 +69,46 @@
 </div>
 </div>
 </div>
+-->
 
 
+<div class="row" style ='background-color: #F47721;'>
+<div class="col col-lg-11"><nav class="navbar " style ='background-color: #F47721;'>
+  <ul class="nav navbar-nav ">
+     <li><img class="img-responsive" src="hhf.png" alt="Chania" style="width:250px;height:50px"</li>
+       <li><p style="font-family: Georgia, Serif;"><H1>Happy Hearts</H1></p></li> 
+      </ul>
+</div>
+<div class="col col-lg-1" >
+      <ul class="nav navbar-nav navbar-right" style ='background-color: #F47721;'>
+     <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Login
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Admin</a></li>
+    <li><a href="#">Donor</a></li>
+    <li><a href="#">Partner</a></li>
+  </ul>
+</div>
+</div>
+  </div>
+        
+ 
+       
+  <!--      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-log-in"></span>Login <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Admin</a></li>
+            <li><a href="#">Donor</a></li>
+            <li><a href="#">Partner</a></li>
+          </ul>
+        </li>-->
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<div class="wrapper container">
+</div>
+
 
 <div class="row">
     <div class="bs-example">
@@ -105,7 +152,6 @@
         </a>-->
     </div>
 </div>
-</div>
 
 <div class="wrapper container">
    <div class="row">
@@ -135,10 +181,10 @@ We work during the gap period when children are forgotten after emergency respon
 </div>
 </div>     
   </div>
-
 </div>
+
 <br>
-<div class="wrapper container">
+
 <div class="row">
 <ul class="nav nav-pills nav-justified">
     <li class="active"><a href="#">Home</a></li>
@@ -148,7 +194,6 @@ We work during the gap period when children are forgotten after emergency respon
 </div>
  
   </div>
-</div>
 
 
 
