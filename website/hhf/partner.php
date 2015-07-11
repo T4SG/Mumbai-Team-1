@@ -74,7 +74,7 @@ $result = $conn->query($sql);
 					echo('<td>'.$row['carpentry'].'%</td>');
 					echo('<td>'.$row['paint'].'%</td>');
 					echo('<td>'.$row['electric_work'].'%</td>');
-					echo('<td>'.'<button type="submit" class="btn btn-info" name="myb" value="Update">Update</button>'.'</td>');
+					echo('<td>'.'<button type="submit" class="btn btn-info" name="myb" value="Update">Accept</button>'.'</td>');
 					
 					echo('</form>');
 					echo('</tr>');
