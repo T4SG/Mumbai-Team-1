@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: test
 -- ------------------------------------------------------
--- Server version	5.6.23-log
+-- Server version 5.6.23-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -123,12 +123,12 @@ DROP TABLE IF EXISTS `problems`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `problems` (
-  `prob_id` int(11) NOT NULL,
+  `prob_id` int(11) NOT NULL AUTO_INCREMENT,
   `s_id` int(11) DEFAULT NULL,
   `contents` varchar(4000) DEFAULT NULL,
   `priority` int(11) DEFAULT NULL,
   PRIMARY KEY (`prob_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -137,7 +137,7 @@ CREATE TABLE `problems` (
 
 LOCK TABLES `problems` WRITE;
 /*!40000 ALTER TABLE `problems` DISABLE KEYS */;
-INSERT INTO `problems` VALUES (1,1,'Schools down!',7);
+INSERT INTO `problems` VALUES (1,1,'Schools down!',7),(2,2,'Need more funding!',9);
 /*!40000 ALTER TABLE `problems` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -158,7 +158,7 @@ CREATE TABLE `reports` (
   `paint` int(11) DEFAULT NULL,
   `electric_work` int(11) DEFAULT NULL,
   PRIMARY KEY (`r_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -167,7 +167,7 @@ CREATE TABLE `reports` (
 
 LOCK TABLES `reports` WRITE;
 /*!40000 ALTER TABLE `reports` DISABLE KEYS */;
-INSERT INTO `reports` VALUES (1,1,'12/07/2015',25,30,20,10,5);
+INSERT INTO `reports` VALUES (1,1,'12/07/2015',25,30,20,10,5),(2,2,'12/07/2015',34,34,44,33,55);
 /*!40000 ALTER TABLE `reports` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -250,7 +250,7 @@ CREATE TABLE `tmp_reports` (
 
 LOCK TABLES `tmp_reports` WRITE;
 /*!40000 ALTER TABLE `tmp_reports` DISABLE KEYS */;
-INSERT INTO `tmp_reports` VALUES (1,2,'12/07/2015',25,30,20,10,25);
+INSERT INTO `tmp_reports` VALUES (1,2,'12/07/2015',34,34,44,33,55);
 /*!40000 ALTER TABLE `tmp_reports` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -263,4 +263,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-07-11 18:29:17
+-- Dump completed on 2015-07-11 20:48:01
