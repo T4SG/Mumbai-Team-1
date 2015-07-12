@@ -76,7 +76,7 @@ if (isset($_POST['formsubmitted'])) {
         $query_check_credentials = "SELECT * FROM members WHERE (Email='$Email' AND password='$Password') AND Activation IS NULL";
 
         
-        echo $query_check_credentials;
+       // echo $query_check_credentials;
         $result_check_credentials = mysqli_query($dbc, $query_check_credentials);
         if(!$result_check_credentials){//If the QUery Failed 
           echo 'Query Failed ';

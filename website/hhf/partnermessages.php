@@ -3,6 +3,8 @@ session_start();
 include('header.php');
 include('data_con.php');
 
+
+//gets all read and unread messages for a partner
 ?>
 <script>
 
@@ -30,7 +32,7 @@ include('data_con.php');
 
 $partner_id=$_SESSION['u_id'];
 
-$sql = "SELECT s_id FROM school where p_id=$partner_id";
+$sql = "SELECT s_id FROM school where p_id=$partner_id"; //get school belonging to the  partner
 $result = $conn->query($sql);
 $row=$result->fetch_assoc();
 
@@ -60,7 +62,7 @@ $result = $conn->query($sql);
 
 				<?php
 
-				$sql = "SELECT * FROM messages where s_id=$school_id order by status";
+				$sql = "SELECT * FROM messages where s_id=$school_id order by status";//fetch all messages and display
 				$result = $conn->query($sql);
 
 				if ($result->num_rows > 0) {

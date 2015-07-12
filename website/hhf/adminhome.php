@@ -2,7 +2,12 @@
 session_start();
 include('header.php');
 include('data_con.php');
+
+
+//Home page for the Admin Dashboard
 ?>
+
+
 <br><br>
 <center>
 	<div class="container">
@@ -15,7 +20,7 @@ include('data_con.php');
 							<select class="form-control" id="select" name="s_id">
 								<?php
 
-								$sql = "SELECT * FROM school";
+								$sql = "SELECT * FROM school";  //gather all schools
 
 								$result = $conn->query($sql);
 
@@ -33,7 +38,7 @@ include('data_con.php');
 							</select>
 						</div>
 					</div>
-
+					<!-- Add relevant form submission hyperlinks -->
 					<input type="submit" class="btn btn-success" value="View Reports" onclick="form.action='adminreport.php';">
 					<input type="submit" class="btn btn-danger" value="View Problems" onclick="form.action='adminproblems.php';">
 					<input type="submit" class="btn btn-warning" value="View Stories" onclick="form.action='adminstories.php';">
@@ -63,7 +68,7 @@ include('data_con.php');
 			<tbody>
 				<?php
 
-				$sql="select * from problems where priority >= 8 order by priority desc";
+				$sql="select * from problems where priority >= 8 order by priority desc";  // sort problems by priority , 8 can be adjusted
 				$result = $conn->query($sql);
 
 
@@ -79,7 +84,7 @@ include('data_con.php');
 						echo('<tr>');
 						echo("<td>$sc_name</td>");
 						echo('<td>'.$row['contents'].'</td>');
-						echo('<td>'.$row['priority'].'</td>');
+						echo('<td>'.$row['priority'].'</td>'); // display contents of problem
 
 
 					}

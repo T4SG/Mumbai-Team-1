@@ -4,6 +4,7 @@ include('header.php');
 include('data_con.php');
 
 ?>
+<!-- function to post data from form using AJAX-->
 <script>
 
 	$(function() {
@@ -60,7 +61,7 @@ $result = $conn->query($sql);
 
 				<?php
 
-				$sql = "SELECT * FROM problems where s_id=$school_id order by priority desc";
+				$sql = "SELECT * FROM problems where s_id=$school_id order by priority desc";  //fetch all problems ordered by priority
 				$result = $conn->query($sql);
 
 				if ($result->num_rows > 0) {

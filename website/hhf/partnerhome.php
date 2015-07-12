@@ -3,6 +3,8 @@ session_start();
 include('header.php');
 include('data_con.php');
 
+// Home page for partner
+
 $partner_id=$_SESSION['u_id'];
 
 $sql = "SELECT s_id FROM school where p_id=$partner_id";
@@ -31,7 +33,7 @@ $school_id=$row['s_id'];
 			<tbody>
 				<?php
 
-				$sql="select * from messages where status=0 AND s_id=$school_id";
+				$sql="select * from messages where status=0 AND s_id=$school_id";  // get unread messages
 				$result = $conn->query($sql);
 
 

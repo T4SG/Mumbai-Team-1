@@ -3,6 +3,8 @@ session_start();
 include('header.php');
 include('data_con.php');
 
+
+//process form submission when submitted
 if(isset($_POST['submitted']))
 {
 
@@ -12,7 +14,7 @@ if(isset($_POST['submitted']))
 	date_default_timezone_set('Asia/Kolkata');
 	$date=date('d/m/Y');
 
-	$sql="insert into messages(`s_id`,`contents`,`status`,`date`) values ($s_id,'$contents',0,'$date')"; //0 means unread
+	$sql="insert into messages(`s_id`,`contents`,`status`,`date`) values ($s_id,'$contents',0,'$date')"; //0 means unread msg
 	//echo $sql;
 	$result=$conn->query($sql);
 
@@ -32,7 +34,7 @@ if(isset($_POST['submitted']))
 
 		$school_id=$_POST['s_id'];
 
-		$sql = "SELECT * FROM school where s_id=$school_id";
+		$sql = "SELECT * FROM school where s_id=$school_id"; //fetch school name
 		$result = $conn->query($sql);
 		$row=$result->fetch_assoc();
 

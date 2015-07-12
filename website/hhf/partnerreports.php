@@ -19,7 +19,7 @@ $school_id=$row['s_id'];
 $school_name=$row['name'];
 
 
-$sql = "SELECT * FROM reports where s_id=$school_id order by r_id DESC";
+$sql = "SELECT * FROM reports where s_id=$school_id order by r_id DESC"; // get all reports for a partner
 
 
 $result = $conn->query($sql);

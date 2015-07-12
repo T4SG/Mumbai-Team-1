@@ -3,6 +3,8 @@ session_start();
 include('header.php');
 include('data_con.php');
 
+
+// Shows relevant images relevant to a school
 ?>
 <center>
 	<div class="container">
@@ -24,7 +26,7 @@ include('data_con.php');
 			$row = $result->fetch_assoc();
 			$url=$row['url'];
 
-			//echo("<img src=images/$url class=img-responsive><br>");
+		
 
 		}
 

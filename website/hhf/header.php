@@ -14,6 +14,8 @@
 
 <?php
 
+//Generate relevant Nav Bars  depending on user type.
+
 if(isset($_SESSION['type']))
 {
 	if($_SESSION['type']=='partner')

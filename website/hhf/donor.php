@@ -3,7 +3,7 @@ session_start();
 include('header.php');
 include('data_con.php');
 
-
+// Generate relevant details for the donors depending on the school
 ?>
 <br>
 <style>
@@ -224,6 +224,8 @@ $result = $conn->query($sql);
 				echo('<h4>Here is what we have  to say:</h4>');
 				echo ('<div class=row><div class=col-md-6 align=left><br><br>');
 				echo($contents);
+
+				//implement like feature for stories
 				echo('<br><br><form method="post" id="myform" onsubmit="myb.disabled = true; return true;">');
 				echo("<input type=hidden name=st_id value=".$row['st_id'].">");
 				echo('<td>'.'<button type="submit" class="btn btn-success" name="myb" value="Accept">Like Story!</button>'.'</td>');
@@ -269,6 +271,8 @@ $result = $conn->query($sql);
 		<br>
 		<img class="img-responsive" src="images/logo.jpg">
 		<br>
+		<br>
+
 
 
 	</div>

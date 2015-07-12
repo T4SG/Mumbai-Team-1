@@ -3,6 +3,7 @@ session_start();
 include('header.php');
 include('data_con.php');
 
+// Displays and partner can Add the problems
 ?>
 <script>
 
@@ -36,7 +37,7 @@ $row=$result->fetch_assoc();
 
 $school_id=$row['s_id'];
 
-$sql = "SELECT * FROM problems where s_id=$school_id order by priority desc";
+$sql = "SELECT * FROM problems where s_id=$school_id order by priority desc";  //query and display problems
 $result = $conn->query($sql);
 
 

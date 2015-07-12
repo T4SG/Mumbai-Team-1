@@ -18,7 +18,7 @@ $row=$result->fetch_assoc();
 
 $school_name=$row['name'];
 
-
+//fetch all reports for a school
 $sql = "SELECT * FROM reports where s_id=$school_id order by r_id ASC";
 
 
@@ -48,6 +48,7 @@ $result = $conn->query($sql);
 			$i=1;
 
 			if ($result->num_rows > 0) {
+				//display reports
 
 				while($row = $result->fetch_assoc()) {
 					echo('<tr>');	
@@ -75,6 +76,7 @@ $result = $conn->query($sql);
 				}
 
 			} 
+			// Algorithm to determine estimated completion date..uses linear approximation
 
 			$avg=round($mini/$i);
 			$left=100-$mini;

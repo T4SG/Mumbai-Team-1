@@ -3,6 +3,8 @@ session_start();
 include('header.php');
 include('data_con.php');
 
+// page to display relevant pending reports for a partner
+
 ?>
 <br><br><br>
 <script>

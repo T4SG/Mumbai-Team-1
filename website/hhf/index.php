@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('header.php');
-
+// Home page of the webiste
 ?>
 
 

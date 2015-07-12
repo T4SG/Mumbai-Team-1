@@ -3,6 +3,8 @@ session_start();
 include('header.php');
 include('data_con.php');
 
+//generate stories for  a schoolfor the partner
+
 ?>
 <center>
 	<div class="container">

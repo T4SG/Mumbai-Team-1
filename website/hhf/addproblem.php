@@ -4,12 +4,12 @@ include('data_con.php');
 include('header.php');
 
 
-$s_id=$_POST['s_id'];
-$contents=$_POST['prob_desc'];
+$s_id=$_POST['s_id'];//get school id
+$contents=$_POST['prob_desc']; //get problem content
 
-$priority=$_POST['priority'];
+$priority=$_POST['priority']; //get priority
 
-$sql="insert into problems(`s_id`,`contents`,`priority`) values($s_id,'$contents',$priority)";
+$sql="insert into problems(`s_id`,`contents`,`priority`) values($s_id,'$contents',$priority)";  //update database
 //echo $sql;
 $result = $conn->query($sql);
 

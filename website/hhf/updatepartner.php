@@ -3,7 +3,7 @@
 include('data_con.php');
 include('header.php');
 
-
+// Bacnkend for dealing with temporary reports
 $tmp_id=$_POST['tmp_id'];
 
 $choice=$_POST['myb'];
