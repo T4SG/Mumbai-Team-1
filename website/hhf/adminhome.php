@@ -38,6 +38,10 @@ include('data_con.php');
 					<input type="submit" class="btn btn-danger" value="View Problems" onclick="form.action='adminproblems.php';">
 					<input type="submit" class="btn btn-warning" value="View Stories" onclick="form.action='adminstories.php';">
 					<input type="submit" class="btn btn-info" value="Send Messages" onclick="form.action='adminmessages.php';">
+					<br><br>
+					<input type="submit" class="btn btn-success" value="Generate report for Donor" onclick="form.action='donor.php';">
+				
+					<input type="submit" class="btn btn-info" value="View Recent Images" onclick="form.action='adminimages.php';">
 				</form>
 			</div>
 		</div>

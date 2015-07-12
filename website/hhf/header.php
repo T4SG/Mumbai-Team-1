@@ -4,6 +4,8 @@
 <script src="js/Chart.js"></script>
 <script src="js/table-fixed-header.js"></script>
 <script src="js/legend.js"></script>
+<script src="js/liquid.js"></script>
+ <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
 <link rel="stylesheet" type="text/css" href="css/bootstrap-white.css">
 <link rel="stylesheet" type="text/css" href="css/checkbox-bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/table-fixed-header.css">
@@ -26,7 +28,7 @@ if($_SESSION['type']=='partner')
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="home.php">Home</a>
+				<a class="navbar-brand" href="partnerhome.php">Home</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -34,12 +36,13 @@ if($_SESSION['type']=='partner')
 					<li ><a href="partner.php">View Pending Reports</a></li>
 					<li><a href="partnerreports.php">View Previous Reports</a></li>
 					<li><a href="partnerproblems.php">Add and view Problems</a></li>
+					<li><a href="partnermessages.php">View all Messages</a></li>
 					<li><a href="partnerstories.php">Community Stories</a></li>
 
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="logout.php">Logout</a></li>
+					<li><a href="logout.php" class="btn btn-info">Logout</a></li>
 				</ul>
 			</div>
 		</div>

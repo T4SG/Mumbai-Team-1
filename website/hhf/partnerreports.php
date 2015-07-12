@@ -40,6 +40,7 @@ $result = $conn->query($sql);
 				<td>Paint</td>
 				<td>Electric Work</td>
 				
+				
 			</tr>
 		</thead>
 		<tbody>
@@ -58,6 +59,7 @@ $result = $conn->query($sql);
 					echo('<td>'.$row['carpentry'].'%</td>');
 					echo('<td>'.$row['paint'].'%</td>');
 					echo('<td>'.$row['electric_work'].'%</td>');
+					//echo('<td><img class=img-responsive src=images/'.$row['url'].'></td>');
 					echo('</tr>');
 
 					if($i==1)
@@ -95,6 +97,11 @@ $result = $conn->query($sql);
 		};
 
 		var context = document.getElementById('clients').getContext('2d');
-		var clientsChart = new Chart(context).Bar(barData);
+		var clientsChart = new Chart(context).Bar(barData,{
+			scaleOverride : true,
+			scaleSteps : 10,
+			scaleStepWidth : 10,
+			scaleStartValue : 0 
+		});
 	</script>
 </div>

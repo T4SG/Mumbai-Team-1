@@ -53,6 +53,7 @@ $result = $conn->query($sql);
 				<td>Carpentry</td>
 				<td>Paint</td>
 				<td>Electric Work</td>
+				<td>Images</td>
 				<td>Action</td>
 			</tr>
 		</thead>
@@ -64,8 +65,8 @@ $result = $conn->query($sql);
 
 				while($row = $result->fetch_assoc()) {
 					echo('<tr>');					
-					echo('<form method="post" id="myform" onsubmit="myb.disabled = true; return true;">');
-					//echo ('<form method="post" action="updatepartner.php">');
+					//echo('<form method="post" id="myform" onsubmit="myb.disabled = true; return true;">');
+					echo ('<form method="post" action="updatepartner.php">');
 					echo("<input type=hidden name=tmp_id value=".$row['tmp_id'].">");
 					echo("<input type=hidden name=s_id value=".$school_id.">");
 					echo('<td>'.$row['date'].'</td>');
@@ -74,7 +75,8 @@ $result = $conn->query($sql);
 					echo('<td>'.$row['carpentry'].'%</td>');
 					echo('<td>'.$row['paint'].'%</td>');
 					echo('<td>'.$row['electric_work'].'%</td>');
-					echo('<td>'.'<button type="submit" class="btn btn-info" name="myb" value="Update">Accept</button>'.'</td>');
+					echo('<td><img class=img-responsive src=images/'.$row['url'].'></td>');
+					echo('<td>'.'<button type="submit" class="btn btn-success" name="myb" value="Accept">Accept</button><button type="submit" class="btn btn-info" name="myb" value="Cancel">Discard</button>'.'</td>');
 					
 					echo('</form>');
 					echo('</tr>');

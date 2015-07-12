@@ -19,7 +19,7 @@ $row=$result->fetch_assoc();
 $school_name=$row['name'];
 
 
-$sql = "SELECT * FROM reports where s_id=$school_id order by r_id DESC";
+$sql = "SELECT * FROM reports where s_id=$school_id order by r_id ASC";
 
 
 $result = $conn->query($sql);
@@ -45,9 +45,9 @@ $result = $conn->query($sql);
 		<tbody>
 
 			<?php
+			$i=1;
 
 			if ($result->num_rows > 0) {
-				$i=1;
 
 				while($row = $result->fetch_assoc()) {
 					echo('<tr>');	
@@ -67,16 +67,24 @@ $result = $conn->query($sql);
 						$carpentry=$row['carpentry'];
 						$paint=$row['paint'];
 						$electric_work=$row['electric_work'];
+						$mini=min($sp,$bw,$carpentry,$paint,$electric_work);
 					}
+
 
 					$i++;
 				}
 
 			} 
+
+			$avg=round($mini/$i);
+			$left=100-$mini;
+			$estimate=$left/$avg;
+
+
 			?>
 		</tbody>
 	</table>
-
+	<br><b>Estimated Months Left for Completion: <?php echo round($estimate); ?></b>
 	<br><br>
 	<center>
 		<h3>Percent Complete for: <?php echo $school_name; ?></h3>
@@ -95,6 +103,11 @@ $result = $conn->query($sql);
 		};
 
 		var context = document.getElementById('clients').getContext('2d');
-		var clientsChart = new Chart(context).Bar(barData);
+		var clientsChart = new Chart(context).Bar(barData,{
+			scaleOverride : true,
+			scaleSteps : 10,
+			scaleStepWidth : 10,
+			scaleStartValue : 0 
+		});
 	</script>
 </div>
