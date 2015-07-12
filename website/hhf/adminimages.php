@@ -53,14 +53,14 @@ include('data_con.php');
 		/* Chrome, Safari, Opera */
 		@-webkit-keyframes example {
 			0%   {left:0px; top:200px;}
-			100%  { left:300px; top:200px;}
+			100%  { left:450px; top:200px;}
 
 		}
 
 		/* Standard syntax */
 		@keyframes example {
 			0%   { left:0px; top:200px;}
-			100%  {left:300px; top:200px;opacity:0.2;}
+			100%  {left:450px; top:200px;opacity:0.2;}
 
 		}
 	</style>
@@ -69,10 +69,10 @@ include('data_con.php');
 
 
 	<img class="new_ani" src=images/<?php echo $url; ?>  style="position:absolute;
-	left:300px;
+	left:450px;
 	top:200px;">
-	<img src=images/<?php echo $url; ?>  class="img-responsive" style="position:absolute;
-	left:300px;
+	<img src=images/school.jpg class="img-responsive" style="position:absolute;
+	left:450px;
 	top:200px;z-index:-1;">
 </center>
 </div>

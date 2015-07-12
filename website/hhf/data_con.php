@@ -7,7 +7,7 @@ if(!isset($_SESSION))
 // Define connection parameters..
 $servername = 'localhost';
 $username = 'root';
-$password = 'root';
+$password = '';
 $dbname = 'test';
 
 // Create connection

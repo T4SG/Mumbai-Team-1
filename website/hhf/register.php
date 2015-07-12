@@ -25,6 +25,7 @@ if (isset($_POST['formsubmitted'])) {
 
 
      }
+     $type=$_POST['type'];
 
 
      if (empty($_POST['Password'])) {
@@ -54,7 +55,7 @@ if (isset($_POST['formsubmitted'])) {
           $Password.=$salt;
           $Password=MD5($Password);
 
-          $query_insert_user = "INSERT INTO `members` ( `Username`, `Email`, `password`,`salt`) VALUES ( '$name', '$Email', '$Password','$salt')";
+          $query_insert_user = "INSERT INTO `members` ( `Username`, `Email`, `password`,`salt`,`type`) VALUES ( '$name', '$Email', '$Password','$salt','$type')";
 
 
           $result_insert_user = mysqli_query($dbc, $query_insert_user);
@@ -174,6 +175,19 @@ if (isset($_POST['formsubmitted'])) {
                     <input type="password" class="form-control" id="Password" name="Password" size="25" placeholder="Enter Password">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-certificate"></span></span></div>
 
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="select" class=" col-lg-2 control-label">Select Type:</label>
+                  <div class="col-lg-8">
+                    <select class="form-control" id="select" name="type">
+                      <option value="partner">Partner</option>
+                      <option value="admin">Admin</option>
+                      <option value="const">Constructor</option>
+                      <option value="commu">Community</option>
+                      <option value="donor">Donor</option>
+                    </select>
                   </div>
                 </div>
                 <center>
