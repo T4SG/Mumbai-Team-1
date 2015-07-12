@@ -69,12 +69,12 @@ DROP TABLE IF EXISTS `images`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `images` (
-  `img_id` int(11) NOT NULL,
-  `r_id` int(11) NOT NULL,
+  `img_id` int(11) NOT NULL AUTO_INCREMENT,
+  `r_id` int(11) DEFAULT NULL,
   `url` varchar(1000) NOT NULL,
   `st_id` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`img_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,6 +83,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
+INSERT INTO `images` VALUES (1,NULL,'story1.jpg','1'),(3,NULL,'apache_pb.gif','8'),(4,NULL,'apache_pb2.png','9');
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -116,6 +117,33 @@ INSERT INTO `members` VALUES (1,'Ashu',NULL,NULL,NULL,NULL,NULL),(2,'admin','68'
 UNLOCK TABLES;
 
 --
+-- Table structure for table `messages`
+--
+
+DROP TABLE IF EXISTS `messages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `messages` (
+  `msg_id` int(11) NOT NULL AUTO_INCREMENT,
+  `s_id` int(11) DEFAULT NULL,
+  `contents` varchar(945) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
+  `date` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`msg_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `messages`
+--
+
+LOCK TABLES `messages` WRITE;
+/*!40000 ALTER TABLE `messages` DISABLE KEYS */;
+INSERT INTO `messages` VALUES (1,1,'fs',0,'12/07/2015'),(2,2,'one 3 fgr',1,'12/07/2015'),(3,2,'thok',1,'12/07/2015'),(4,2,'msg date',1,'12/07/2015');
+/*!40000 ALTER TABLE `messages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `problems`
 --
 
@@ -128,7 +156,7 @@ CREATE TABLE `problems` (
   `contents` varchar(4000) DEFAULT NULL,
   `priority` int(11) DEFAULT NULL,
   PRIMARY KEY (`prob_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -137,7 +165,7 @@ CREATE TABLE `problems` (
 
 LOCK TABLES `problems` WRITE;
 /*!40000 ALTER TABLE `problems` DISABLE KEYS */;
-INSERT INTO `problems` VALUES (1,1,'Schools down!',7),(2,2,'Need more funding!',9);
+INSERT INTO `problems` VALUES (1,1,'Schools down!',7),(8,2,'Newrpvfkg',9);
 /*!40000 ALTER TABLE `problems` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,8 +185,9 @@ CREATE TABLE `reports` (
   `carpentry` int(11) DEFAULT NULL,
   `paint` int(11) DEFAULT NULL,
   `electric_work` int(11) DEFAULT NULL,
+  `url` varchar(145) DEFAULT NULL,
   PRIMARY KEY (`r_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -167,7 +196,7 @@ CREATE TABLE `reports` (
 
 LOCK TABLES `reports` WRITE;
 /*!40000 ALTER TABLE `reports` DISABLE KEYS */;
-INSERT INTO `reports` VALUES (1,1,'12/07/2015',25,30,20,10,5),(2,2,'12/07/2015',34,34,44,33,55);
+INSERT INTO `reports` VALUES (3,2,'10/05/2015',20,27,32,19,40,'apache_pb2.png'),(4,2,'11/06/2015',27,30,38,27,47,'apache_pb2.png'),(7,2,'12/07/2015',99,78,88,67,55,'apache_pb2.png');
 /*!40000 ALTER TABLE `reports` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -211,8 +240,9 @@ CREATE TABLE `stories` (
   `st_id` int(11) NOT NULL AUTO_INCREMENT,
   `s_id` int(11) DEFAULT NULL,
   `contents` varchar(4000) DEFAULT NULL,
+  `likes` int(11) DEFAULT '0',
   PRIMARY KEY (`st_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -221,6 +251,7 @@ CREATE TABLE `stories` (
 
 LOCK TABLES `stories` WRITE;
 /*!40000 ALTER TABLE `stories` DISABLE KEYS */;
+INSERT INTO `stories` VALUES (1,2,'This new kindergarten is a great change especially for our children, who can now enjoy to learn in a comfortable place, they can improve their learning skills thanks to a variety of toys provided by donors. Also they really enjoy their nice and new playground, which help develop the children motor skills in a fun way.',2),(8,2,'A short story is a brief work of literature, usually written in narrative prose. Emerging from earlier oral storytelling traditions in the 17th century, the short story has grown to encompass a body of work so diverse as to defy easy characterization.',0),(9,2,'Motivation is a theoretical construct used to explain behavior. It represents the reasons for people\'s actions, desires, and needs. Motivation can also be defined as one\'s direction to behavior or what causes a person to want to repeat a behavior and vice versa.[1] A motive is what prompts the person to act in a certain way or at least develop an inclination for specific behavior.',0);
 /*!40000 ALTER TABLE `stories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -232,7 +263,7 @@ DROP TABLE IF EXISTS `tmp_reports`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tmp_reports` (
-  `tmp_id` int(11) NOT NULL,
+  `tmp_id` int(11) NOT NULL AUTO_INCREMENT,
   `s_id` int(11) DEFAULT NULL,
   `date` varchar(145) DEFAULT NULL,
   `site_preparation` int(11) DEFAULT NULL,
@@ -240,8 +271,9 @@ CREATE TABLE `tmp_reports` (
   `carpentry` int(11) DEFAULT NULL,
   `paint` int(11) DEFAULT NULL,
   `electric_work` int(11) DEFAULT NULL,
+  `url` varchar(245) DEFAULT NULL,
   PRIMARY KEY (`tmp_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -250,7 +282,6 @@ CREATE TABLE `tmp_reports` (
 
 LOCK TABLES `tmp_reports` WRITE;
 /*!40000 ALTER TABLE `tmp_reports` DISABLE KEYS */;
-INSERT INTO `tmp_reports` VALUES (1,2,'12/07/2015',34,34,44,33,55);
 /*!40000 ALTER TABLE `tmp_reports` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -263,4 +294,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-07-11 20:48:01
+-- Dump completed on 2015-07-12  9:56:35
