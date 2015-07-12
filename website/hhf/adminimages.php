@@ -68,10 +68,10 @@ include('data_con.php');
 <body>
 
 
-	<img class="new_ani" src="images/logo.jpg"  style="position:absolute;
+	<img class="new_ani" src=images/<?php echo $url; ?>  style="position:absolute;
 	left:300px;
 	top:200px;">
-	<img src="images/logo.jpg" class="img-responsive" style="position:absolute;
+	<img src=images/<?php echo $url; ?>  class="img-responsive" style="position:absolute;
 	left:300px;
 	top:200px;z-index:-1;">
 </center>

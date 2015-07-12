@@ -90,7 +90,7 @@ if (isset($_POST['formsubmitted'])) {
 
             $_SESSION = mysqli_fetch_array($result_check_credentials, MYSQLI_ASSOC);//Assign the result of this query to SESSION Global Variable
 
-            header("Location: index.php");
+            header("Location: redirect.php");
 
 
           }else

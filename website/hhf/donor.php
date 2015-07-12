@@ -67,6 +67,27 @@ include('data_con.php');
 
 </style>
 
+<script>
+
+	$(function() {
+		$('form#myform').on('submit', function(e) {
+			$(this).find('input[type="submit"]').prop("disabled", true);
+			
+			$.post('updatelikes.php', $(this).serialize(), function (data) {
+            // This is executed when the call to update.php was succesful.  
+           // alert('Done');
+
+       }).error(function() {
+            // This is executed when the call to mail.php failed.
+            alert('Error. Refresh page and try again.');
+        });
+       e.preventDefault();
+   });
+	});
+
+
+</script>
+
 <?php
 
 
@@ -203,6 +224,12 @@ $result = $conn->query($sql);
 				echo('<h4>Here is what we have  to say:</h4>');
 				echo ('<div class=row><div class=col-md-6 align=left><br><br>');
 				echo($contents);
+				echo('<br><br><form method="post" id="myform" onsubmit="myb.disabled = true; return true;">');
+				echo("<input type=hidden name=st_id value=".$row['st_id'].">");
+				echo('<td>'.'<button type="submit" class="btn btn-success" name="myb" value="Accept">Like Story!</button>'.'</td>');
+
+				echo('</form>');
+				echo('<br>Total Likes: '.$row['likes']);
 				echo('</div>');
 
 				$sql2="SELECT * from images where st_id=".$row['st_id'];
