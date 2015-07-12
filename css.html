@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div.aa {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+   // position: relative;
+}
+
+div.bb {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+   // position:relative;//top:0px;left:500px;
+
+    -webkit-animation-name: eg; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    animation-name: eg;
+    animation-duration: 4s;
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes eg{
+0%{left:500px; top:0px;}
+50%{left:-200px; top:0px;}
+100%{left:-200px; top:0px;}
+}
+
+
+
+/* Standard syntax */
+@keyframes eg {
+0%{left:0px; top:0px;}
+50%{left:-200px; top:0px;}
+100%{left:-200px; top:0px;}
+}
+</style>
+</head>
+<body>
+
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+
+
+<div class="aa">
+
+<div class="bb"></div>
+</div>
+
+</body>
+</html>
