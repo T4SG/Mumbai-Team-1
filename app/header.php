@@ -13,13 +13,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Happy Hearts Fund</a>
+      <a class="navbar-brand" href="index.php">Happy Hearts Fund</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav">
-        <li ><a href="#">Share a Story</a></li>
-        <li><a href="#">Report Submission</a></li>
+        <li ><a href="story.php">Share a Story</a></li>
+        <li><a href="report.php">Report Submission</a></li>
 
       </ul>
 

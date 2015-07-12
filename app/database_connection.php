@@ -2,7 +2,7 @@
 
 /*Define constant to connect to database */
 DEFINE('DATABASE_USER', 'root');
-DEFINE('DATABASE_PASSWORD', 'root');
+DEFINE('DATABASE_PASSWORD', '');
 DEFINE('DATABASE_HOST', 'localhost');
 DEFINE('DATABASE_NAME', 'test');
 /*Default time zone ,to be able to send mail */
